@@ -11,6 +11,13 @@ config_version=5
 [application]
 
 config/name="test3"
-run/main_scene="res://escenas/main/main.tscn"
+run/main_scene="res://escenas/game/game.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[file_customization]
+
+folder_colors={
+"res://data/": "yellow",
+"res://escenas/": "green"
+}
