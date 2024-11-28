@@ -75,6 +75,10 @@ text = "-"
 layout_mode = 2
 text = "max"
 
+[node name="Button_Zero" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "zero"
+
 [node name="Label_Descarga" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -82,7 +86,11 @@ theme_override_colors/font_color = Color(0.937255, 0, 0, 1)
 text = "( 0 )"
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/CheckButton" to="." method="_on_check_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button_Mes" to="." method="_on_button_mes_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button_Menys" to="." method="_on_button_menys_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button_Max" to="." method="_on_button_max_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button_Zero" to="." method="_on_button_zero_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

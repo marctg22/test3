@@ -1,0 +1,6 @@
+res://escenas/game/game.tscn
+res://escenas/energia/energia.gd
+res://escenas/barraUp/barra_up.gd
+res://escenas/barraUp/barra_up.tscn
+res://escenas/tabs/tabs.tscn
+res://escenas/energia/energia.tscn

@@ -12,7 +12,7 @@ var data : Data = Game.ref.data
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("energia")
-	progress_bar.max_value = data.barres.energiaValorMax
+	progress_bar.max_value = data.energia.energiaValorMax
 	#label_energia_utilitzada.text = "%s"% valorEnergiaUtilitzada
 	pass # Replace with function body.
 
@@ -24,24 +24,22 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	
-	var energiaValorMaxim = data.barres.energiaValorMax
-	var energiaActual = data.barres.energiaActual
-	var energiaLliure = data.barres.energiaLliure
-	var energiaUtilitzada = data.barres.energiaUtilitzada
-	
-	if progress_bar.value < energiaValorMaxim:
+		
+	if progress_bar.value < data.energia.energiaValorMax:
 		progress_bar.value += 0.05
-		energiaActual = progress_bar.value
+		data.energia.energiaActual = progress_bar.value
 		label.text = "energia: %s"% round(progress_bar.value)
-	elif progress_bar.value >= energiaValorMaxim:
+	elif progress_bar.value >= data.energia.energiaValorMax:
 		timer.stop()	
 
-	energiaLliure = energiaActual - energiaUtilitzada
+	data.energia.energiaLliure = data.energia.energiaActual - data.energia.energiaUtilitzada
 	
 
 	pass # Replace with function body.
 
 func updateLabel()->void:
-	label_energia_utilitzada.text = "%s"% data.barres.valorProgresBarUtilitzat
+	
+	if data.energia.energiaUtilitzada < 0:
+		data.energia.energiaUtilitzada = 0
+	label_energia_utilitzada.text = "%s"% round( data.energia.energiaUtilitzada)
 	pass
