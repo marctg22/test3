@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://01pj0ef68uxw"]
+
+[ext_resource type="Script" path="res://escenas/masmorras/masmorras.gd" id="1_j4c4m"]
+[ext_resource type="PackedScene" uid="uid://bpn1k81ojbluf" path="res://escenas/masmorras/player/player.tscn" id="2_1uhcf"]
+[ext_resource type="PackedScene" uid="uid://c7if21iigi8eb" path="res://escenas/masmorras/enemigo/enemigo.tscn" id="3_fn6bg"]
+
+[node name="Masmorras" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_j4c4m")
+metadata/_tab_index = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Player" parent="HBoxContainer" instance=ExtResource("2_1uhcf")]
+layout_mode = 2
+
+[node name="Enemigo" parent="HBoxContainer" instance=ExtResource("3_fn6bg")]
+custom_minimum_size = Vector2(550, 0)
+layout_mode = 2
+
+[node name="TimerPlayer" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[node name="TimerEnemigo" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[connection signal="timeout" from="TimerPlayer" to="." method="_on_timer_player_timeout"]
+[connection signal="timeout" from="TimerEnemigo" to="." method="_on_timer_enemigo_timeout"]

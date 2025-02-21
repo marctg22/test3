@@ -1,0 +1,211 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpn1k81ojbluf"]
+
+[ext_resource type="Script" path="res://escenas/masmorras/player/player.gd" id="1_byfca"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dujd8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="player" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_byfca")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AtaqueValorRecibidoAlPlayer" type="Label" parent="VBoxContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer2"]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="SpeedProgressBar" type="ProgressBar" parent="VBoxContainer/PanelContainer2/VBoxContainer/PanelContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Moral" type="PanelContainer" parent="VBoxContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer2/VBoxContainer/Moral"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer2/VBoxContainer/Moral/VBoxContainer"]
+layout_mode = 2
+text = "moral"
+horizontal_alignment = 1
+
+[node name="MoralPB" type="ProgressBar" parent="VBoxContainer/PanelContainer2/VBoxContainer/Moral/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Magia" type="PanelContainer" parent="VBoxContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer2/VBoxContainer/Magia"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer2/VBoxContainer/Magia/VBoxContainer"]
+layout_mode = 2
+text = "mana"
+horizontal_alignment = 1
+
+[node name="MagiaPB" type="ProgressBar" parent="VBoxContainer/PanelContainer2/VBoxContainer/Magia/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Estadistiques" type="PanelContainer" parent="VBoxContainer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer2/VBoxContainer/Estadistiques"]
+layout_mode = 2
+
+[node name="Ataque" type="PanelContainer" parent="VBoxContainer/PanelContainer2/VBoxContainer/Estadistiques/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer2/VBoxContainer/Estadistiques/VBoxContainer/Ataque"]
+layout_mode = 2
+
+[node name="titul" type="Label" parent="VBoxContainer/PanelContainer2/VBoxContainer/Estadistiques/VBoxContainer/Ataque/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "ataque"
+horizontal_alignment = 1
+
+[node name="AtacValor" type="Label" parent="VBoxContainer/PanelContainer2/VBoxContainer/Estadistiques/VBoxContainer/Ataque/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="Defensa" type="PanelContainer" parent="VBoxContainer/PanelContainer2/VBoxContainer/Estadistiques/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer2/VBoxContainer/Estadistiques/VBoxContainer/Defensa"]
+layout_mode = 2
+
+[node name="Titul" type="Label" parent="VBoxContainer/PanelContainer2/VBoxContainer/Estadistiques/VBoxContainer/Defensa/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "defensa"
+horizontal_alignment = 1
+
+[node name="DefensaValor" type="Label" parent="VBoxContainer/PanelContainer2/VBoxContainer/Estadistiques/VBoxContainer/Defensa/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="Hechizo" type="PanelContainer" parent="VBoxContainer/PanelContainer2/VBoxContainer/Estadistiques/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer2/VBoxContainer/Estadistiques/VBoxContainer/Hechizo"]
+layout_mode = 2
+
+[node name="titul" type="Label" parent="VBoxContainer/PanelContainer2/VBoxContainer/Estadistiques/VBoxContainer/Hechizo/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "hechizo"
+horizontal_alignment = 1
+
+[node name="HechizoValor" type="Label" parent="VBoxContainer/PanelContainer2/VBoxContainer/Estadistiques/VBoxContainer/Hechizo/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer2/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer2/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+fill_mode = 3
+
+[node name="Button" type="Button" parent="VBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer/ProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_dujd8")
+text = "btn1"
+
+[node name="Button2" type="Button" parent="VBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "btn2"
+
+[node name="Button3" type="Button" parent="VBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "btn3"
+
+[node name="Button4" type="Button" parent="VBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "btn4"
+
+[node name="Button5" type="Button" parent="VBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "btn5"
+
+[node name="Button6" type="Button" parent="VBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "btn6"
+
+[node name="Button7" type="Button" parent="VBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "btn7"
+
+[node name="Button8" type="Button" parent="VBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "btn8"
+
+[node name="Button9" type="Button" parent="VBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "btn9"
+
+[node name="Button10" type="Button" parent="VBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "btn10"
+
+[node name="TimerEnemigo" type="Timer" parent="."]
+
+[connection signal="timeout" from="TimerEnemigo" to="." method="_on_timer_enemigo_timeout"]

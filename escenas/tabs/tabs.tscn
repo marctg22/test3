@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://buuab08mcy5to"]
+[gd_scene load_steps=3 format=3 uid="uid://buuab08mcy5to"]
 
-[ext_resource type="PackedScene" uid="uid://dqeonhwc2l72c" path="res://escenas/barraUp/barra_up.tscn" id="1_1uwc0"]
+[ext_resource type="PackedScene" uid="uid://dqeonhwc2l72c" path="res://escenas/barra_superior/barra_superior.tscn" id="1_1uwc0"]
+[ext_resource type="Script" path="res://escenas/tabs/tab_estadisticas.gd" id="1_a8286"]
 
-[node name="PanelContainer2" type="PanelContainer"]
+[node name="Tabs" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -10,12 +11,14 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_a8286")
 
 [node name="TabContainer" type="TabContainer" parent="."]
 layout_mode = 2
-current_tab = 0
+current_tab = 1
 
 [node name="TabBar" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -29,26 +32,158 @@ grow_vertical = 2
 
 [node name="PanelContainer" parent="TabContainer/TabBar/VBoxContainer" instance=ExtResource("1_1uwc0")]
 layout_mode = 2
-
-[node name="PanelContainer2" parent="TabContainer/TabBar/VBoxContainer" instance=ExtResource("1_1uwc0")]
-layout_mode = 2
+size_flags_vertical = 1
 
 [node name="PanelContainer3" parent="TabContainer/TabBar/VBoxContainer" instance=ExtResource("1_1uwc0")]
 layout_mode = 2
+size_flags_vertical = 1
 
 [node name="PanelContainer4" parent="TabContainer/TabBar/VBoxContainer" instance=ExtResource("1_1uwc0")]
 layout_mode = 2
+size_flags_vertical = 1
 
 [node name="PanelContainer5" parent="TabContainer/TabBar/VBoxContainer" instance=ExtResource("1_1uwc0")]
 layout_mode = 2
+size_flags_vertical = 1
 
 [node name="PanelContainer6" parent="TabContainer/TabBar/VBoxContainer" instance=ExtResource("1_1uwc0")]
 layout_mode = 2
+size_flags_vertical = 1
 
 [node name="TabBar2" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/TabBar2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/TabBar2/MarginContainer"]
+layout_mode = 2
+
+[node name="fuerza" type="HBoxContainer" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="titulo" type="Label" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer/fuerza"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "fuerza :"
+
+[node name="FuerzaValor" type="Label" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer/fuerza"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "1000
+"
+horizontal_alignment = 2
+
+[node name="Destreza2" type="HBoxContainer" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="titulo" type="Label" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer/Destreza2"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "destreza :"
+
+[node name="DestrezaValor" type="Label" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer/Destreza2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "10"
+horizontal_alignment = 2
+
+[node name="Inteligencia2" type="HBoxContainer" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="titulo" type="Label" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer/Inteligencia2"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "inteligencia :"
+
+[node name="InteligenciaValor" type="Label" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer/Inteligencia2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "10"
+horizontal_alignment = 2
+
+[node name="Constitucion2" type="HBoxContainer" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="titulo" type="Label" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer/Constitucion2"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "constitucion :"
+
+[node name="ConstitucionValor" type="Label" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer/Constitucion2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "10"
+horizontal_alignment = 2
+
+[node name="Suerte2" type="HBoxContainer" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="titulo" type="Label" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer/Suerte2"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+text = "suerte :"
+
+[node name="SuerteValor" type="Label" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer/Suerte2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "10"
+horizontal_alignment = 2
+
+[node name="Moral" type="HBoxContainer" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Titulo" type="Label" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer/Moral"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "moral"
+
+[node name="MoralValor" type="Label" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer/Moral"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "00000"
+horizontal_alignment = 1
+
+[node name="MoralPB" type="ProgressBar" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer/Moral"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Magia" type="HBoxContainer" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Titulo" type="Label" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer/Magia"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "magia"
+
+[node name="MagiaValor" type="Label" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer/Magia"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "00000"
+horizontal_alignment = 1
+
+[node name="MagiaPB" type="ProgressBar" parent="TabContainer/TabBar2/MarginContainer/VBoxContainer/Magia"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="TabBar3" type="TabBar" parent="TabContainer"]
 visible = false

@@ -1,6 +1,7 @@
 res://escenas/game/game.tscn
-res://escenas/energia/energia.gd
-res://escenas/barraUp/barra_up.gd
-res://escenas/barraUp/barra_up.tscn
 res://escenas/tabs/tabs.tscn
 res://escenas/energia/energia.tscn
+res://escenas/masmorras/masmorras.tscn
+res://escenas/masmorras/player/player.tscn
+res://escenas/masmorras/enemigo/enemigo.tscn
+res://escenas/masmorras/player/player.gd

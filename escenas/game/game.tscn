@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxi3a5yf3edq3"]
+[gd_scene load_steps=5 format=3 uid="uid://cxi3a5yf3edq3"]
 
 [ext_resource type="Script" path="res://escenas/game/game.gd" id="1_q8ae4"]
 [ext_resource type="PackedScene" uid="uid://buuab08mcy5to" path="res://escenas/tabs/tabs.tscn" id="2_4ayk7"]
 [ext_resource type="PackedScene" uid="uid://oa57vpc5umel" path="res://escenas/energia/energia.tscn" id="2_ed44e"]
+[ext_resource type="PackedScene" uid="uid://01pj0ef68uxw" path="res://escenas/masmorras/masmorras.tscn" id="4_m03ju"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -13,18 +14,54 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q8ae4")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="energia" parent="VBoxContainer" instance=ExtResource("2_ed44e")]
+[node name="energia" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_ed44e")]
 layout_mode = 2
 size_flags_vertical = 1
 
-[node name="tabs" parent="VBoxContainer" instance=ExtResource("2_4ayk7")]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+current_tab = 0
+
+[node name="Tabs" parent="MarginContainer/VBoxContainer/HBoxContainer/TabContainer" instance=ExtResource("2_4ayk7")]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Masmorras" parent="MarginContainer/VBoxContainer/HBoxContainer/TabContainer" instance=ExtResource("4_m03ju")]
+visible = false
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "buton a"
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "buton b"

@@ -4,7 +4,7 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0upu"]
 
-[node name="PanelContainer" type="PanelContainer"]
+[node name="Energia" type="PanelContainer"]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 50.0
